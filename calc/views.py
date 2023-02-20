@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from calc.models import Calculation, Memory
-from calc.serializers import CalculationSerializer, MemorySerializer
+from calc.serializers import  MemorySerializer
 
 # Create your views here.
 
