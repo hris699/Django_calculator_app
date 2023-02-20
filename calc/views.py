@@ -49,7 +49,7 @@ def msOperation(request):
         mc=Memory(number=res)
         mc.save()
     except:
-        x="Not Defined"
+        res="Not Defined"
     return JsonResponse(str(res),safe=False)
 
 @csrf_exempt
@@ -72,7 +72,7 @@ def mAddOperation(request):
         print("res",res)
         madd=Memory.objects.all()
         serialise=MemorySerializer(madd,many=True)
-        memoRes=serialise.data[0]["number"]
+        memoRes=serialise.data[0]["number"]  # gives back an ordered dictonary
         madd.delete()
         print("memoRes",memoRes)
         if memoRes=="":
