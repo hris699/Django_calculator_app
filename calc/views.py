@@ -89,7 +89,6 @@ def mAddOperation(request):
         if memoRes!="":
             memory=Memory(number=int(memoRes)+int(memoRes))
             memory.save()
-            print("except is called")
         else:
             pass
     madd=Memory.objects.all()
