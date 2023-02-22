@@ -39,10 +39,6 @@ def msOperation(request):
     try:
         data=JSONParser().parse(request)
         data=data["client"]
-        while data[-1]  in ["+","-","*","/"]:
-            data=data[0:-1]
-        while data[0]  in ["+","*","/"]:
-            data=data[1:]
         res=eval(data)
         ms=Memory.objects.all()
         ms.delete()
@@ -64,10 +60,6 @@ def mAddOperation(request):
     try:
         data=JSONParser().parse(request)
         data=data["client"]
-        while data[-1]  in ["+","-","*","/"]:
-            data=data[0:-1]
-        while data[0]  in ["+","*","/"]:
-            data=data[1:]
         res=eval(data)
         print("res",res)
         madd=Memory.objects.all()
